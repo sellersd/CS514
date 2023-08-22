@@ -1,6 +1,7 @@
 #lang racket
 
 
+(require "cs514-useful.rkt")
 (require rackunit)
 
 ;;; Create 10 lats given 5 atoms
@@ -52,9 +53,27 @@
 (null? (cdr '((meatballs))))
 
 ;;; 6
+(set! l '(a b c d e f g))
+(set! a 'p)
+;;; (set! l '())
+;;; (set! a 'a)
+(define t #t)
 
+(display "Problem 6\n")
+(cond 
+  ((null? l) '())
+  (t (or
+       (eq? (car l) a )
+       (member? a (cdr l)))))
+
+(if 
+     (null? l)
+     (quote ())
+     (or
+       (eq? (car l) a) (member? a (cdr l))))
 
 ;;; 7
+(display "Problem 7\n")
 (define atom?
   (lambda (a)
     (cond )))
