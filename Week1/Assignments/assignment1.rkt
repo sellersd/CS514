@@ -74,15 +74,30 @@
 
 ;;; 7
 (display "Problem 7\n")
+(set! l '((a b c) (d e) (f g)))
+(define m '((a b c) d e (f g)))
 (define atom?
-  (lambda (a)
-    (cond )))
+  (lambda (x)
+    (and (not (pair? x)) (not (null? x)))))
+
 (define nonlat?
   (lambda (l)
     (cond 
-      (null? l #t)
-      (atom? (car l) #f)
-      (else nonlat? (cdr l)))))
+      ((null? l) #t)
+      ((atom? (car l)) #f)
+      (else (nonlat? (cdr l))))))
 
-(nonlat? '(a b c))
-(nonlat? '((a) b c))
+(nonlat? l)
+(nonlat? m)
+
+
+(display "Problem 8\n")
+(define member-twice?
+  (lambda (a l)
+    (cond 
+      ((null? quote ())
+       ))))
+
+
+(display "Problem 9\n")
+
