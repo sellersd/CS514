@@ -95,11 +95,29 @@
 
 
 (display "Problem 8\n")
+(set! l '(a b c d e f h h i j k l m))
 (define member-twice?
   (lambda (a l)
     (cond 
       ((null? l) '())
+      (else (member a (cdr (member a l))))
        )))
+
+;;; False start
+;;; (define member-twice?
+;;;   (lambda (a l)
+;;;     (define count 0)
+;;;     (cond 
+;;;       ((null? l) (eq? count 2) #t)
+;;;       (eq? a (car l) (+ count 1) (member-twice? a (cdr l)))
+;;;       
+;;;        )))
+;;; 
+;;; (member 'd '(a b c d))
+;;; (member 'd (cdr (member 'h l)))
+;;; (member 'h (cdr (member 'h l)))
+(member-twice? 'h l)
+(member-twice? 'd l)
 
 
 (display "Problem 9\n")
