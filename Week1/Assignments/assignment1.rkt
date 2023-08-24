@@ -17,6 +17,7 @@
 '(ant bee cat dog)
 '(ant cat dog eel)
 
+(displayln "Problem 2")
 ;;; Create lists using cons
 
 (define a 'all)
@@ -37,29 +38,31 @@
 (check-equal? (cons (cons a '()) (cons b  (cons c  '()))) '((all) these problems))
 
 
+(displayln "Problem 3")
 ;;; (car (cons a l), a=french, l=(fries)
 (define a1 'french)
 (define l '(fries))
 (check-equal? (car (cons a1 l)) 'french)
 
 
+
+(displayln "Problem 4")
 ;;; Can (null? (cons a2 l)) #t
 (define a2 '())
 (null? (cons a2 '()))
 ;;;No, let l be the empty list, then (cons a l) results in the non-empty list (a). All other list contain more elements than the empty list, thus they will still have more elements than the empty list after application of cons.
 
 
-;;; 5
+(displayln "Problem 5")
 (null? (cdr '((meatballs))))
 
-;;; 6
+(displayln "Problem 6")
 (set! l '(a b c d e f g))
 (set! a 'p)
 ;;; (set! l '())
 ;;; (set! a 'a)
 (define t #t)
 
-(display "Problem 6\n")
 (cond 
   ((null? l) '())
   (t (or
@@ -87,8 +90,8 @@
       ((atom? (car l)) #f)
       (else (nonlat? (cdr l))))))
 
-(nonlat? l)
-(nonlat? m)
+(check-equal? (nonlat? l) #t "fail")
+(check-equal? (nonlat? m) #f "fail")
 
 
 (display "Problem 8\n")
@@ -107,4 +110,4 @@
        (else (cons (car (cdr (car l))) (seconds (cdr l))))
        )))
 
-(displayln (seconds '((a b c) (e f g) (h i j) (k l m))))
+(check-equal? (seconds '((a b c) (e f g) (h i j) (k l m))) '(b f i l) #f)
