@@ -95,9 +95,16 @@
 (define member-twice?
   (lambda (a l)
     (cond 
-      ((null? quote ())
-       ))))
+      ((null? l) '())
+       )))
 
 
 (display "Problem 9\n")
+(define seconds
+  (lambda (l)
+    (cond
+      ((null? l) '())
+       (else (cons (car (cdr (car l))) (seconds (cdr l))))
+       )))
 
+(displayln (seconds '((a b c) (e f g) (h i j) (k l m))))
