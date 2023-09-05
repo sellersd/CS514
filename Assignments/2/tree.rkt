@@ -34,7 +34,7 @@
 (define t1 (mk-tree 4 '() '()))
 (mk-tree 4 3 5)
 
-(check-eq? ((mk-tree 4 '() '()) (4 '() '())))
+(check-eq? mk-tree 4 '() '() 4 '() '())
 (check-eq? (mk-tree 4 3 5) (4 3 5))
 
 (define insert
@@ -46,9 +46,15 @@
       (else (displayln "cons") (cons atom '())))))
         
 (insert t1 3)
+(display "insert 3 into t1 4 () () ")
 (displayln t1)
+(displayln "root is 4")
 (root t1)
+
+(displayln "leftsub is 3 () ()")
 (leftsub t1)
+
+(displayln "rightsub is ()")
 (rightsub t1)
 
 ;;; (define node 'a)
