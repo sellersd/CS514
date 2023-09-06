@@ -1,3 +1,11 @@
+;;; Author: David Sellers
+;;; Date: 03SEP2023
+;;; Course: CS514 
+;;; Assignment: 3 - Ribcage ADT - Python
+;;; References
+;;; EOPL Problem 2.11
+;;; https://docs.python.org/3/howto/functional.html
+
 def environ():
    return [[],[]] 
 
